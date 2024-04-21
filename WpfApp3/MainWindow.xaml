@@ -1,0 +1,34 @@
+﻿<Window x:Class="WpfApp3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp3"
+        mc:Ignorable="d"
+        Title="NotePad" Height="500" Width="830">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.15*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <TextBox x:Name="FilePath" Margin="5" Width="170" BorderBrush="Black" BorderThickness="2"/>
+            <Button x:Name="OpenButton" Margin="5" Content="^" Width="50" FontWeight="Bold" Click="OpenButton_Click"/>
+            <Button x:Name="saveButton" FontWeight="Bold" Background="Orange" Margin="5" Content="Save" Width="80" Click="saveButton_Click"/>
+            <Grid>
+                <CheckBox x:Name="checkBox" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                    <CheckBox.LayoutTransform>
+                        <ScaleTransform ScaleX="3" ScaleY="3" />
+                    </CheckBox.LayoutTransform>
+                </CheckBox>
+
+            </Grid>
+            <Button x:Name="cutButton" FontWeight="Bold" Background="Cyan" Margin="5" Content="Cut" Width="80" Click="cutButton_Click"/>
+            <Button x:Name="copyButton" FontWeight="Bold" Background="Cyan" Margin="5" Content="Copy" Width="80" Click="copyButton_Click"/>
+            <Button x:Name="PasteButton" FontWeight="Bold" Background="Cyan" Margin="5" Content="Paste" Width="80" Click="PasteButton_Click"/>
+            <Button x:Name="selectAllButton" FontWeight="Bold" Background="Cyan" Margin="5" Content="Select All" Width="80" Click="selectAllButton_Click"/>
+            <ComboBox Name="SizeBox" Width="60" Height="45" Foreground="black" Margin="3" SelectionChanged="SizeBox_SelectionChanged"/>
+        </StackPanel>
+        <RichTextBox x:Name="text" Grid.Row="1" TextChanged="text_TextChanged" />
+    </Grid>
+</Window>
